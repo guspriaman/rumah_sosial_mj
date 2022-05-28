@@ -70,7 +70,7 @@ class Auth extends CI_Controller {
         //     redirect('auth');
         // }
 
-        $this->form_validation->set_rules('name', 'Nama Lengkap', 'required', [
+        $this->form_validation->set_rules('nama', 'Nama Lengkap', 'required', [
             'required' => 'Nama Belum diis!!',
             'errors' => 'Email Tidak Bener'
         ]);
@@ -96,7 +96,7 @@ class Auth extends CI_Controller {
         } else {
             $email = $this->input->post('email', true);
             $data = [
-                'nama' => htmlspecialchars($this->input->post('name', true)),
+                'nama' => htmlspecialchars($this->input->post('nama', true)),
                 'email' => htmlspecialchars($this->input->post('email', true)),
                 'image' => 'default.jpg',
                 'password' => password_hash($this->input->post('password1'), PASSWORD_DEFAULT),
@@ -114,7 +114,7 @@ class Auth extends CI_Controller {
             $this->session->set_flashdata('messege', '<div class="alert alert-success" role="alert">
             Reigsitrasi anda telah berhasil!
             </div>');
-            redirect('auth/login');
+            redirect('auth');
             // redirect artinya kita mengarhakan mettodnya ke ara mana
         }
     }

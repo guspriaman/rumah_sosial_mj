@@ -33,8 +33,8 @@
                     </div>
                     <form class="user" method="post" action="<?= base_url('auth/registrasi'); ?>">
                         <div class="form-group">
-                            <input type="text" class="form-control form-control-user" id="nama" name="name" placeholder="Nama Lengkap" value="<?= set_value('name'); ?>">
-                            <?= form_error('name', '<small class="text-danger pl-3">', '</small>'); ?>
+                            <input type="text" class="form-control form-control-user" id="nama" name="nama" placeholder="Nama Lengkap" value="<?= set_value('name'); ?>">
+                            <?= form_error('nama', '<small class="text-danger pl-3">', '</small>'); ?>
                         </div>
                         <div class="form-group">
                             <input type="text" class="form-control form-control-user" id="email" name="email" placeholder="Alamat Email" value="<?= set_value('email'); ?>">
@@ -56,7 +56,7 @@
                     </form>
                     <hr>
                     <div class="text-center">
-                        Sudah Menjadi Member?<a class="small" href="<?= base_url('auth/login'); ?>"> Login!</a>
+                        Sudah Menjadi Member?<a class="small" href="<?= base_url('auth'); ?>"> Login!</a>
                     </div>
                 </div>
             </div>
