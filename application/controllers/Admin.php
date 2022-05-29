@@ -1,7 +1,19 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Dashboard extends CI_Controller {
+class Admin extends CI_Controller {
+
+
+	public function __construct()
+    {
+        parent::__construct();
+		if(!$this->session->userdata('email')) {
+			redirect('auth');
+		}
+        // cek_login();
+        // cek_user();
+
+    }
 
 
 	public function index()
@@ -12,8 +24,8 @@ class Dashboard extends CI_Controller {
 		
         $data['user'] = $this->db->get_where('user',['email' => $this->session->userdata('email')])->row_array();
 		
-		$data['page_title'] = 'Dashboard';
-		$this->load->view('dashboard', $data);
+		$data['page_title'] = 'Admin';
+		$this->load->view('admin/index', $data);
 	}
 }
  

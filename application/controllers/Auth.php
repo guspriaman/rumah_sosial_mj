@@ -5,6 +5,8 @@ class Auth extends CI_Controller {
     public function __construct()
     {
         parent::__construct();
+        // cek_login();
+        // cek_user();
         $this->load->library('form_validation');
 
     }
@@ -47,7 +49,11 @@ class Auth extends CI_Controller {
                     ];
 
                     $this->session->set_userdata($data);
-                    redirect('dashboard');
+                    if  ($user['role_id'] == 1) {                        
+                        redirect('admin');
+                    } else {
+                        redirect('user');
+                    }
                 } else {
                     $this->session->set_flashdata('pesan', '<div class="alert alert-danger alert-message" role="alert">Password salah!!</div>');
                     redirect('auth');

@@ -1,11 +1,15 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class Profil extends CI_Controller
+class User extends CI_Controller
 {
     public function __construct()
     {
         parent::__construct();
+
+        if(!$this->session->userdata('email')) {
+			redirect('auth');
+		}  
 		$this->load->library('form_validation');
         // cek_login();
     }
@@ -15,7 +19,7 @@ class Profil extends CI_Controller
         // $data['judul'] = 'Profil Saya';
         $data['user'] = $this->db->get_where('user',['email' => $this->session->userdata('email')])->row_array();
 		$data['page_title'] = 'Profil Saya';
-        $this->load->view('user/user_data', $data);
+        $this->load->view('user/index', $data);
     }
 
     // public function anggota()
@@ -80,7 +84,7 @@ class Profil extends CI_Controller
             $this->db->update('user');
 
             $this->session->set_flashdata('pesan', '<div class="alert alert-success alert-message" role="alert">Profil Berhasil diubah </div>');
-            redirect('profil');
+            redirect('user');
         }
     }
 
