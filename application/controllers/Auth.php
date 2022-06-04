@@ -51,6 +51,10 @@ class Auth extends CI_Controller {
                     $this->session->set_userdata($data);
                     if  ($user['role_id'] == 1) {                        
                         redirect('admin');
+                    } else if($user['role_id'] == 4) {
+                        redirect('gudang');
+                    } else if($user['role_id'] == 5) {
+                        redirect('keuangan');
                     } else {
                         redirect('user');
                     }
@@ -72,10 +76,6 @@ class Auth extends CI_Controller {
 	
 	public function registrasi()
 	{
-        // if ($this->session->userdata('email')) {
-        //     redirect('auth');
-        // }
-
         $this->form_validation->set_rules('nama', 'Nama Lengkap', 'required', [
             'required' => 'Nama Belum diis!!',
             'errors' => 'Email Tidak Bener'

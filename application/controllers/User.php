@@ -19,22 +19,20 @@ class User extends CI_Controller
         // $data['judul'] = 'Profil Saya';
         $data['user'] = $this->db->get_where('user',['email' => $this->session->userdata('email')])->row_array();
 		$data['page_title'] = 'Profil Saya';
+        $data['page_title'] = 'Data User/PIC';
         $this->load->view('user/index', $data);
     }
 
-    // public function anggota()
-    // {
-    //     $data['judul'] = 'Data Anggota';
-    //     $data['user'] = $this->ModelUser->cekData(['email' => $this->session->userdata('email')])->row_array();
-    //     $this->db->where('role_id', 1);
-    //     $data['anggota'] = $this->db->get('user')->result_array();
+    public function anggota()
+    {
+        $data['page_title'] = 'Data_User';
+        $data['user'] = $this->db->get_where('user',['email' => $this->session->userdata('email')])->row_array();
+        $this->db->where('role_id', 2 , 3);
+        $data['anggota'] = $this->db->get('user')->result_array();
+        
+        $this->load->view('user/anggota', $data);
 
-    //     $this->load->view('templates/header', $data);
-    //     $this->load->view('templates/sidebar', $data);
-    //     $this->load->view('templates/topbar', $data);
-    //     $this->load->view('user/anggota', $data);
-    //     $this->load->view('templates/footer');
-    // }
+    }
 
     public function ubahProfil()
     {

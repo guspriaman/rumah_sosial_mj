@@ -3,10 +3,10 @@
 </div>
 
 <footer class="main-footer">
-<strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong>
-All rights reserved.
+<strong>Aplikasi Inventori &copy; <a href="#">Rumah Sosial</a>.</strong>
+ Minyak Jelantah
 <div class="float-right d-none d-sm-inline-block">
-<b>Version</b> 3.2.0
+<b>2022</b> 
 </div>
 </footer>
 
@@ -47,7 +47,7 @@ All rights reserved.
 
 <script src="<?= base_url() ?>assets/dist/js/adminlte.js?v=3.2.0"></script>
 
-<script src="<?= base_url() ?>assets/dist/js/demo.js"></script>
+<!-- <script src="<?= base_url() ?>assets/dist/js/demo.js"></script> -->
 
 <script src="<?= base_url() ?>assets/dist/js/pages/dashboard.js"></script>
 </body>

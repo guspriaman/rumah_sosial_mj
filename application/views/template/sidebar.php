@@ -44,8 +44,8 @@
 
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
 
-<a href="index3.html" class="brand-link">
-<img src="assets/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+<a href="#" class="brand-link">
+<img src="assets/dist/img/profil/logo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
 <span class="brand-text font-weight-light">RUMAH SOSIAL MJ</span>
 </a>
 
@@ -98,7 +98,7 @@
 
 
 
-                <?php foreach ($subMenu as $sm) : ?>
+                    <?php foreach ($subMenu as $sm) : ?>
                     <li class="nav-item">
                         <a href="<?= base_url($sm['url']);?>" class="nav-link">
                             <i class="<?= $sm['icon'];?>"></i>
@@ -120,7 +120,6 @@
               <p>Logout</p>
           </a>
       </li>
-
     </ul>
   </nav>
 </div>
