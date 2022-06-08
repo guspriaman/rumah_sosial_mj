@@ -4,7 +4,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0">Menu Daftar Pelanggan</h1>
+                    <h1 class="m-0">Data penjemputan Minyak Jelantah</h1>
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
@@ -58,7 +58,7 @@
                                         <td><?= $g['jumlah']; ?></td>
                                         <td><?= $g['status']; ?></td>
                                         <td>
-                                            <a href="<?= base_url('gudang/ubahGudang/').$g['id_gudang'];?>" class="badge badge-info"><i class="fas fa-edit"></i> Ubah</a>
+                                            <!-- <a href="<?= base_url('gudang/ubahGudang/').$g['id_gudang'];?>" class="badge badge-info"><i class="fas fa-edit"></i> Ubah</a> -->
                                             <a href="<?= base_url('gudang/hapusGudang/').$g['id_gudang'];?>" onclick="return confirm('Kamu yakin akan menghapus <?= $judul.' '.$g['nama_admin_g'];?> ?');" class="badge badge-danger"><i class="fas fa-trash"></i> Hapus</a>
                                         </td>
                                     </tr>
@@ -135,7 +135,7 @@
                     <div class="form-group">
                         <input type="date" class="form-control form-control-user" id="tgl_penjemputan" name="tgl_penjemputan" placeholder="Masukkan Tanggal Penjemputan">
                     </div>
-                    <div class="form-group">
+                    <!-- <div class="form-group">
                         <select name="lokasih" class="form-control form-control-user">
                             <option value="">Pilih Lokasih</option>
                             <?php
@@ -143,6 +143,9 @@
                                 <option value="<?= $l['lokasih'];?>"><?= $l['lokasih'];?></option>
                             <?php } ?>
                         </select>
+                    </div> -->
+                    <div class="form-group">
+                        <input type="text" class="form-control form-control-user" id="lokasih" name="lokasih" placeholder="Masukkan lokasih Minyak Jelantah">
                     </div>
                     <div class="form-group">
                         <input type="text" class="form-control form-control-user" id="jumlah" name="jumlah" placeholder="Masukkan Jumlah Minyak Jelantah">

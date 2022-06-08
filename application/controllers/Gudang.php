@@ -19,7 +19,7 @@ class Gudang extends CI_Controller
         $data['judul'] = 'Data Minyak Jelantah';
         $data['user'] = $this->db->get_where('user',['email' => $this->session->userdata('email')])->row_array();
         $data['gudang'] = $this->ModelGudang->getGudang()->result_array();
-        $data['lokasih'] = $this->ModelPelanggan->getLokasih()->result_array();
+        $data['lokasih'] = $this->ModelLokasih->getLokasih()->result_array();
         $data['pelanggan'] = $this->ModelPelanggan->getPelanggan()->result_array();
         $data['lokasih'] = $this->db->get('lokasih')->result_array();
         // $data['mj'] = $this->ModelMJ->getMj()->result_array();
@@ -66,7 +66,7 @@ class Gudang extends CI_Controller
                 'nama_pic' => $this->input->post('nama_pic', true),
                 'nama_pelanggan' => $this->input->post('nama_pelanggan', true),
                 'tgl_penjemputan' => $this->input->post('tgl_penjemputan', true),
-                'id_lokasih' => $this->input->post('id_lokasih', true),
+                'lokasih' => $this->input->post('lokasih', true),
                 'jumlah' => $this->input->post('jumlah', true),
                 'status' => $this->input->post('status', true),
             ];

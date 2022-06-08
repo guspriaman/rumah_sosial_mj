@@ -1,32 +1,32 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class ModelMj extends CI_Model
+class ModelKeuangan extends CI_Model
 {
     //manajemen buku
-    public function getMj()
+    public function getKeuangan()
     {
-        return $this->db->get('mj');
+        return $this->db->get('keuangan');
     }
 
-    public function mjWhere($where)
+    public function KeuanganWhere($where)
     {
-        return $this->db->get_where('mj', $where);
+        return $this->db->get_where('keuangan', $where);
     }
 
-    public function simpanMj($data = null)
+    public function simpanKeuangan($data = null)
     {
-        $this->db->insert('mj',$data);
+        $this->db->insert('keuangan',$data);
     }
 
-    public function updateMj($data = null, $where = null)
+    public function updateKeuangan($data = null, $where = null)
     {
-        $this->db->update('mj', $data, $where);
+        $this->db->update('keuangan', $data, $where);
     }
 
-    public function hapusMj($where = null)
+    public function hapusKeuangan($where = null)
     {
-        $this->db->delete('mj', $where);
+        $this->db->delete('keuangan', $where);
     }
 
     // public function total($field, $where)
@@ -35,7 +35,7 @@ class ModelMj extends CI_Model
     //     if(!empty($where) && count($where) > 0){
     //         $this->db->where($where);
     //     }
-    //     $this->db->from('mj');
+    //     $this->db->from('Keuangan');
     //     return $this->db->get()->row($field);
     // }
     
@@ -66,28 +66,19 @@ class ModelMj extends CI_Model
     // }
 
     //join
-    // public function joinLokasihmj($where)
+    // public function joinMjKeuangan($where)
     // {
-    //     $this->db->select('mj.id_lokasih,lokasih.lokasih');
-    //     $this->db->from('mj');
-    //     $this->db->join('lokasih','lokasih.id_lokasih = mj.lokasih');
+    //     $this->db->select('Keuangan.id_Keuangan,mj.nama_pic');
+    //     $this->db->from('Keuangan');
+    //     $this->db->join('mj','mj.id_mj = Keuangan.nama_pic');
     //     $this->db->where($where);
     //     return $this->db->get();
     // }
-
-    // public function getLokasihMj()
-    // {
-    //     $query = "SELECT `mj`.*, `lokasih`,`lokasih`
-    //     FROM 'mj' JOIN `lokasih`
-    //     ON `mj`.`id_mj` = `lokasih`.`id_lokasih`
-    //     ";
-    //     return $this->db->query($query)->result_array();
-    // }
-    public function joinPelangganhmj($where)
+    public function joinPelangganhKeuangan($where)
     {
-        $this->db->select('mj.nama_pelanggan,pelanggan.nama_pelanggan');
-        $this->db->from('mj');
-        $this->db->join('pelanggan','pelanggan.id_pelanggan = mj.nama_pelanggan');
+        $this->db->select('keuangan.nama_pelanggan,pelanggan.nama_pelanggan');
+        $this->db->from('keuangan');
+        $this->db->join('pelanggan','pelanggan.id_pelanggan = keuangan.nama_pelanggan');
         $this->db->where($where);
         return $this->db->get();
     }
@@ -95,7 +86,7 @@ class ModelMj extends CI_Model
     // public function getLimitPelenggan()
     // {
     //     $this->db->limit(5);
-    //     return $this->db->get('mj');
+    //     return $this->db->get('Keuangan');
     // }
 
 }

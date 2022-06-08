@@ -46,8 +46,8 @@
                                     <th scope="row"><?= $a++; ?></th>
                                     <td><?= $l['lokasih']; ?></td>
                                     <td>
-                                        <a href="<?= base_url('pelanggan/ubahLokasih/').$l['id_lokasih'];?>" class="badge badge-info"><i class="fas fa-edit"></i> Ubah</a>
-                                        <a href="<?= base_url('pelanggan/hapusLokasih/').$l['id_lokasih'];?>" onclick="return confirm('Kamu yakin akan menghapus <?= $judul.' '.$l['id_lokasih'];?> ?');" class="badge badge-danger"><i class="fas fa-trash"></i> Hapus</a>
+                                        <!-- <a href="<?= base_url('lokasih/ubahLokasih/').$l['id_lokasih'];?>" class="badge badge-info"><i class="fas fa-edit"></i> Ubah</a> -->
+                                        <a href="<?= base_url('lokasih/hapusLokasih/').$l['id_lokasih'];?>" onclick="return confirm('Kamu yakin akan menghapus <?= $judul.' '.$l['id_lokasih'];?> ?');" class="badge badge-danger"><i class="fas fa-trash"></i> Hapus</a>
                                     </td>
                                 </tr>
                                 <?php } ?>

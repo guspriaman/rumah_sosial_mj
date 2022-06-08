@@ -27,8 +27,9 @@
 <section class="content">
 <div class="container-fluid">
 
-<h2>selamat siang</h2>
-</div>
+  <h2 class="text-center">SELAMAT DATANG DI APLIKASI</h2>
+  <h2 class="text-center">RUMAH SOSIAL MINYAK JELANTAH</h2>
+  </div>
 
 </section>
 

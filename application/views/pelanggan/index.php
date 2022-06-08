@@ -38,7 +38,6 @@
                                         <th scope="col">Lokasih Pelanggan</th>
                                         <th scope="col">No Tlp Pelanggan</th>
                                         <th scope="col">Tgl Gabung Pelanggan</th>
-                                        <!-- <th scope="col">Gambar</th> -->
                                         <th scope="col">Pilihan</th>
                                     </tr>
                                 </thead>
@@ -50,18 +49,13 @@
                                 <tr>
                                     <th scope="row"><?= $a++; ?></th>
                                         <td><?= $p['nama_pelanggan']; ?></td>
-                                        <td><?= $p['id_lokasih']; ?></td>
+                                        <td><?= $p['lokasih']; ?></td>
                                         <td><?= $p['no_tlp']; ?></td>
                                         <td><?= $p['tgl_gabung']; ?></td>
-                                        <!-- <td>
-                                            <picture>
-                                                <source srcset="" type="image/svg+xml">
-                                                <img src="<?= base_url('assets/dist/img/') . $p['image'];?>" class="img-fluid img-thumbnail" alt="...">
-                                            </picture></td> -->
-                                            <td>
-                                                <a href="<?= base_url('pelanggan/ubahPelanggan/').$p['id_pelanggan'];?>" class="badge badge-info"><i class="fas fa-edit"></i> Ubah</a>
-                                                <a href="<?= base_url('pelanggan/hapusPelanggan/').$p['id_pelanggan'];?>" onclick="return confirm('Kamu yakin akan menghapus <?= $judul.' '.$p['nama_pelanggan'];?> ?');" class="badge badge-danger"><i class="fas fa-trash"></i> Hapus</a>
-                                            </td>
+                                        <td>
+                                            <a href="<?= base_url('pelanggan/ubahPelanggan/').$p['id_pelanggan'];?>" class="badge badge-info"><i class="fas fa-edit"></i> Ubah</a>
+                                            <a href="<?= base_url('pelanggan/hapusPelanggan/').$p['id_pelanggan'];?>" onclick="return confirm('Kamu yakin akan menghapus <?= $judul.' '.$p['nama_pelanggan'];?> ?');" class="badge badge-danger"><i class="fas fa-trash"></i> Hapus</a>
+                                        </td>
                                         </tr>
                                     <?php } ?>
                                 </tbody>
@@ -111,13 +105,7 @@
                         <input type="text" class="form-control form-control-user" id="nama_pelanggan" name="nama_pelanggan" placeholder="Masukkan Nama Pelanggan">
                     </div>
                     <div class="form-group">
-                        <select name="id_lokasih" class="form-control form-control-user">
-                            <option value="">Pilih Lokasih</option>
-                            <?php
-                            foreach ($lokasih as $l) { ?>
-                                <option value="<?= $l['id_lokasih'];?>"><?= $l['lokasih'];?></option>
-                            <?php } ?>
-                        </select>
+                        <input type="text" class="form-control form-control-user" id="lokasih" name="lokasih" placeholder="Masukkan Lokasih Pelanggan">
                     </div>
                     <div class="form-group">
                         <input type="text" class="form-control form-control-user" id="no_tlp" name="no_tlp" placeholder="Masukkan No Tlp Pelanggan">
@@ -125,18 +113,6 @@
                     <div class="form-group">
                         <input type="date" class="form-control form-control-user" id="tgl_gabung" name="tgl_gabung" placeholder="Masukkan Tgl Gabung Pelanggan">
                     </div>
-                    <!-- <div class="form-group">
-                        <select name="tahun" class="form-control form-control-user">
-                            <option value="">Pilih Tahun</option>
-                            <?php
-                            for ($i=date('Y'); $i > 1000 ; $i--) { ?>
-                                <option value="<?= $i;?>"><?= $i;?></option>
-                            <?php } ?>
-                        </select>
-                    </div> -->
-                    <!-- <div class="form-group">
-                        <input type="file" class="form-control form-control-user" id="image" name="image">
-                    </div> -->
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="fas fa-ban"></i> Close</button>
