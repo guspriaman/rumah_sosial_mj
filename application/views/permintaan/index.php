@@ -22,7 +22,7 @@
                                 </div>
                             <?php }?>
                             <?= $this->session->flashdata('pesan'); ?>
-                            <a href="" class="btn btn-primary mb-3" data-toggle="modal" data-target="#mjBaruModal"><i class="fas fa-file-alt"></i> Tambah Data permintaan penjemputan MJ</a>
+                            <a href="" class="btn btn-primary mb-3" data-toggle="modal" data-target="#permintaanBaruModal"><i class="fas fa-file-alt"></i> Tambah Data permintaan penjemputan MJ</a>
                         </div>
                     </div>
                 </div>
@@ -45,17 +45,17 @@
                                     
                                 <?php
                                 $a = 1;
-                                foreach ($mj as $j) { ?>
+                                foreach ($permintaan as $j) { ?>
                                 <tr>
                                     <th scope="row"><?= $a++; ?></th>
                                         <td><?= $j['nama_pic']; ?></td>
                                         <td><?= $j['nama_pelanggan']; ?></td>
                                         <td><?= $j['lokasih']; ?></td>
                                         <td><?= $j['jumlah']; ?></td>
-                                        <td><?= $j['tgl_minta_jemput']; ?></td>
+                                        <td><?= $j['tgl_permintaan']; ?></td>
                                         <td>
-                                            <!-- <a href="<?= base_url('mj/ubahMj/').$j['id_mj'];?>" class="badge badge-info"><i class="fas fa-edit"></i> Ubah</a> -->
-                                            <a href="<?= base_url('mj/hapusMj/').$j['id_mj'];?>" onclick="return confirm('Kamu yakin akan menghapus <?= $judul.' '.$j['nama_pic'];?> ?');" class="badge badge-danger"><i class="fas fa-trash"></i> Hapus</a>
+                                            <a href="<?= base_url('permintaan/ubahPermintaan/').$j['id_permintaan'];?>" class="badge badge-info"><i class="fas fa-edit"></i> Ubah</a>
+                                            <a href="<?= base_url('permintaan/hapusPermintaan/').$j['id_permintaan'];?>" onclick="return confirm('Kamu yakin akan menghapus <?= $judul.' '.$j['nama_pic'];?> ?');" class="badge badge-danger"><i class="fas fa-trash"></i> Hapus</a>
                                         </td>
                                         
                                 </tr>
@@ -90,16 +90,16 @@
 <!-- End of Main Content -->
 
 <!-- Modal Tambah buku baru-->
-<div class="modal fade" id="mjBaruModal" tabindex="-1" role="dialog" aria-labelledby="mjBaruModalLabel" aria-hidden="true">
+<div class="modal fade" id="permintaanBaruModal" tabindex="-1" role="dialog" aria-labelledby="permintaanBaruModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="mjBaruModalLabel">Tambah Data Minyak Jelantah</h5>
+                <h5 class="modal-title" id="permintaan BaruModalLabel">Tambah Data permintaan Penjemputan</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <form action="<?= base_url('mj'); ?>" method="post" enctype="multipart/form-data">
+            <form action="<?= base_url('permintaan'); ?>" method="post" enctype="multipart/form-data">
                 <div class="modal-body">
                     <div class="form-group">
                         <input type="text" class="form-control form-control-user" id="nama_pic" name="nama_pic" placeholder="Masukkan Nama PIC">
@@ -114,24 +114,22 @@
                             <?php } ?>
                         </select>
                     </div>
-                    <!-- <div class="form-group">
-                        <select name="id_lokasih" class="form-control form-control-user">
+                    <div class="form-group">
+                        <select name="lokasih" class="form-control form-control-user">
                             <option value="">Pilih Lokasih</option>
                             <?php
                             foreach ($lokasih as $l) { ?>
                                 <option value="<?= $l['lokasih'];?>"><?= $l['lokasih'];?></option>
                             <?php } ?>
                         </select>
-                    </div> -->
-
-                    <div class="form-group">
-                        <input type="text" class="form-control form-control-user" id="lokasih" name="lokasih" placeholder="Masukkan lokasih Minyak Jelantah">
                     </div>
+
+
                     <div class="form-group">
                         <input type="text" class="form-control form-control-user" id="jumlah" name="jumlah" placeholder="Masukkan Jumlah Minyak Jelantah">
                     </div>
                     <div class="form-group">
-                        <input type="date" class="form-control form-control-user" id="tgl_minta_jemput" name="tgl_minta_jemput" placeholder="Masukkaan Tanggal Penjemputan">
+                        <input type="date" class="form-control form-control-user" id="tgl_permintaan" name="tgl_permintaan" placeholder="Masukkaan Tanggal permintaan penjmeputan">
                     </div>
 
                 </div>

@@ -46,8 +46,8 @@
                                     <th scope="row"><?= $a++; ?></th>
                                     <td><?= $l['lokasih']; ?></td>
                                     <td>
-                                        <!-- <a href="<?= base_url('lokasih/ubahLokasih/').$l['id_lokasih'];?>" class="badge badge-info"><i class="fas fa-edit"></i> Ubah</a> -->
-                                        <a href="<?= base_url('lokasih/hapusLokasih/').$l['id_lokasih'];?>" onclick="return confirm('Kamu yakin akan menghapus <?= $judul.' '.$l['id_lokasih'];?> ?');" class="badge badge-danger"><i class="fas fa-trash"></i> Hapus</a>
+                                        <a href="<?= base_url('lokasih/ubahLokasih/').$l['id'];?>" class="badge badge-info"><i class="fas fa-edit"></i> Ubah</a>
+                                        <a href="<?= base_url('lokasih/hapusLokasih/').$l['id'];?>" onclick="return confirm('Kamu yakin akan menghapus <?= $judul.' '.$l['id'];?> ?');" class="badge badge-danger"><i class="fas fa-trash"></i> Hapus</a>
                                     </td>
                                 </tr>
                                 <?php } ?>
@@ -67,7 +67,7 @@
 
 
 
-< <div class="modal fade" id="lokasihBaruModal" tabindex="-1" role="dialog" aria-labelledby="lokasihBaruModalLabel" aria-hidden="true">
+<div class="modal fade" id="lokasihBaruModal" tabindex="-1" role="dialog" aria-labelledby="lokasihBaruModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">

@@ -19,7 +19,7 @@ class ModelLokasih extends CI_Model
         $this->db->insert('lokasih',$data);
     }
 
-    public function update($data = null, $where = null)
+    public function updateLokasih($where = null, $data = null)
     {
         $this->db->update('lokasih', $data, $where);
     }

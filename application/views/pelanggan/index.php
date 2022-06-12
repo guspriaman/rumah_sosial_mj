@@ -49,7 +49,7 @@
                                 <tr>
                                     <th scope="row"><?= $a++; ?></th>
                                         <td><?= $p['nama_pelanggan']; ?></td>
-                                        <td><?= $p['lokasih']; ?></td>
+                                        <td><?= $p['id_lokasih']; ?></td>
                                         <td><?= $p['no_tlp']; ?></td>
                                         <td><?= $p['tgl_gabung']; ?></td>
                                         <td>
@@ -104,8 +104,17 @@
                     <div class="form-group">
                         <input type="text" class="form-control form-control-user" id="nama_pelanggan" name="nama_pelanggan" placeholder="Masukkan Nama Pelanggan">
                     </div>
-                    <div class="form-group">
+                    <!-- <div class="form-group">
                         <input type="text" class="form-control form-control-user" id="lokasih" name="lokasih" placeholder="Masukkan Lokasih Pelanggan">
+                    </div> -->
+                    <div class="form-group">
+                        <select name="id_lokasih" class="form-control form-control-user">
+                            <option value="">Pilih lokasih</option>
+                            <?php
+                            foreach ($lokasih as $l) { ?>
+                                <option value="<?= $l['lokasih'];?>"><?= $l['lokasih'];?></option>
+                            <?php } ?>
+                        </select>
                     </div>
                     <div class="form-group">
                         <input type="text" class="form-control form-control-user" id="no_tlp" name="no_tlp" placeholder="Masukkan No Tlp Pelanggan">

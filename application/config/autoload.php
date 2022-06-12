@@ -60,6 +60,7 @@ $autoload['packages'] = array();
 */
 $autoload['libraries'] = array('email', 'session', 'database','form_validation');
 
+
 /*
 | -------------------------------------------------------------------
 |  Auto-load Drivers
@@ -132,4 +133,4 @@ $autoload['language'] = array();
 |
 |	$autoload['model'] = array('first_model' => 'first');
 */
-$autoload['model'] = array('ModelMenu','ModelPelanggan','ModelMj','ModelGudang','ModelLokasih','ModelKeuangan');
+$autoload['model'] = array('ModelMenu','ModelPelanggan','ModelPermintaan','ModelPenjemputan','ModelLokasih','ModelKeuangan');

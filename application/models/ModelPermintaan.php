@@ -1,32 +1,32 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class ModelMj extends CI_Model
+class ModelPermintaan extends CI_Model
 {
     //manajemen buku
-    public function getMj()
+    public function getPermintaan()
     {
-        return $this->db->get('mj');
+        return $this->db->get('permintaan');
     }
 
-    public function mjWhere($where)
+    public function permintaanWhere($where)
     {
-        return $this->db->get_where('mj', $where);
+        return $this->db->get_where('permintaan', $where);
     }
 
-    public function simpanMj($data = null)
+    public function simpanPermintaan($data = null)
     {
-        $this->db->insert('mj',$data);
+        $this->db->insert('permintaan',$data);
     }
 
-    public function updateMj($data = null, $where = null)
+    public function updatePermintaan($data = null, $where = null)
     {
-        $this->db->update('mj', $data, $where);
+        $this->db->update('permintaan', $data, $where);
     }
 
-    public function hapusMj($where = null)
+    public function hapusPermintaan($where = null)
     {
-        $this->db->delete('mj', $where);
+        $this->db->delete('permintaan', $where);
     }
 
     // public function total($field, $where)
@@ -83,11 +83,19 @@ class ModelMj extends CI_Model
     //     ";
     //     return $this->db->query($query)->result_array();
     // }
-    public function joinPelangganhmj($where)
+    public function joinPelangganPermintaan($where)
     {
-        $this->db->select('mj.nama_pelanggan,pelanggan.nama_pelanggan');
-        $this->db->from('mj');
-        $this->db->join('pelanggan','pelanggan.id_pelanggan = mj.nama_pelanggan');
+        $this->db->select('permintaan.nama_pelanggan,pelanggan.nama_pelanggan');
+        $this->db->from('permintaan');
+        $this->db->join('pelanggan','pelanggan.id_pelanggan = permintaan.nama_pelanggan');
+        $this->db->where($where);
+        return $this->db->get();
+    }
+    public function joinLokasihPermintaan($where)
+    {
+        $this->db->select('permintaan.lokasih,pelanggan.lokasih');
+        $this->db->from('permintaan');
+        $this->db->join('lokasih','lokasih.id = permintaan.lokasih');
         $this->db->where($where);
         return $this->db->get();
     }
