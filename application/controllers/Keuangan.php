@@ -11,7 +11,7 @@ class Keuangan extends CI_Controller
 			redirect('auth');
 		}  
 		$this->load->library('form_validation');
-        // cek_login();
+
     }
 
     public function index()
@@ -20,6 +20,7 @@ class Keuangan extends CI_Controller
         $data['user'] = $this->db->get_where('user',['email' => $this->session->userdata('email')])->row_array();
         $data['keuangan'] = $this->ModelKeuangan->getKeuangan()->result_array();
         $data['pelanggan'] = $this->ModelPelanggan->getPelanggan()->result_array();
+        $data['permintaan'] = $this->ModelPermintaan->getPermintaan()->result_array();
 
 
 

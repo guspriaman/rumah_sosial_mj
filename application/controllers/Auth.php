@@ -52,11 +52,11 @@ class Auth extends CI_Controller {
                     if  ($user['role_id'] == 1) {                        
                         redirect('admin');
                     } else if($user['role_id'] == 4) {
-                        redirect('gudang');
+                        redirect('penjemputan');
                     } else if($user['role_id'] == 5) {
                         redirect('keuangan');
                     } else {
-                        redirect('mj');
+                        redirect('permintaan');
                     }
                 } else {
                     $this->session->set_flashdata('pesan', '<div class="alert alert-danger alert-message" role="alert">Password salah!!</div>');

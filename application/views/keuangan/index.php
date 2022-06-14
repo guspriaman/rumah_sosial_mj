@@ -9,7 +9,7 @@
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item"><a href="<?= base_url('keuangan')?>">Home</a></li>
-                        <li class="breadcrumb-item active">menu Data Pelanggan</li>
+                        <li class="breadcrumb-item active">menu Pembayaran</li>
                     </ol>
                 </div>
                 <div class="col-sm-6 mt-4">
@@ -22,7 +22,7 @@
                                 </div>
                             <?php }?>
                             <?= $this->session->flashdata('pesan'); ?>
-                            <a href="" class="btn btn-primary mb-3" data-toggle="modal" data-target="#keuanganBaruModal"><i class="fas fa-file-alt"></i>Tambah Data MJ yg Telah Dijemput</a>
+                            <a href="" class="btn btn-primary mb-3" data-toggle="modal" data-target="#keuanganBaruModal"><i class="fas fa-file-alt"></i>Tambah Data Pembayaran MJ</a>
                         </div>
                     </div>
                 </div>
@@ -47,19 +47,19 @@
                                     
                                 <?php
                                 $a = 1;
-                                foreach ($keuangan as $g) { ?>
+                                foreach ($keuangan as $k) { ?>
                                 <tr>
                                     <th scope="row"><?= $a++; ?></th>
-                                        <td><?= $g['nama_admin_k']; ?></td>
-                                        <td><?= $g['nama_pic']; ?></td>
-                                        <td><?= $g['nama_pelanggan']; ?></td>
-                                        <td><?= $g['tgl_pembayaran']; ?></td>
-                                        <td><?= $g['jumlah']; ?></td>
-                                        <td><?= $g['bayar']; ?></td>
-                                        <td><?= $g['status']; ?></td>
+                                        <td><?= $k['nama_admin_k']; ?></td>
+                                        <td><?= $k['nama_pic']; ?></td>
+                                        <td><?= $k['nama_pelanggan']; ?></td>
+                                        <td><?= $k['tgl_pembayaran']; ?></td>
+                                        <td><?= $k['jumlah']; ?></td>
+                                        <td><?= $k['bayar']; ?></td>
+                                        <td><?= $k['status']; ?></td>
                                         <td>
-                                            <!-- <a href="<?= base_url('keuangan/ubahkeuangan/').$g['id_keuangan'];?>" class="badge badge-info"><i class="fas fa-edit"></i> Ubah</a> -->
-                                            <a href="<?= base_url('keuangan/hapusKeuangan/').$g['id_keuangan'];?>" onclick="return confirm('Kamu yakin akan menghapus <?= $judul.' '.$g['nama_admin_k'];?> ?');" class="badge badge-danger"><i class="fas fa-trash"></i> Hapus</a>
+                                            <a href="<?= base_url('keuangan/ubahkeuangan/').$k['id_keuangan'];?>" class="badge badge-info"><i class="fas fa-edit"></i> Ubah</a>
+                                            <a href="<?= base_url('keuangan/hapusKeuangan/').$k['id_keuangan'];?>" onclick="return confirm('Kamu yakin akan menghapus <?= $judul.' '.$k['nama_admin_k'];?> ?');" class="badge badge-danger"><i class="fas fa-trash"></i> Hapus</a>
                                         </td>
                                     </tr>
                                 <?php } ?>
@@ -87,14 +87,6 @@
 
 
 
-
-
-<!-- /.container-fluid -->
-
-</div>
-<!-- End of Main Content -->
-
-<!-- Modal Tambah buku baru-->
 <div class="modal fade" id="keuanganBaruModal" tabindex="-1" role="dialog" aria-labelledby="keuanganBaruModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -109,18 +101,17 @@
                     <div class="form-group">
                         <input type="text" class="form-control form-control-user" id="nama_admin_k" name="nama_admin_k" placeholder="Masukkan Nama Admin keuangan">
                     </div>
+
                     <div class="form-group">
-                        <input type="text" class="form-control form-control-user" id="nama_pic" name="nama_pic" placeholder="Masukkan Nama PIC">
-                    </div>
-                    <!-- <div class="form-group">
                         <select name="nama_pic" class="form-control form-control-user">
-                            <option value="">Pilih Nama_PIC</option>
+                            <option value="">Pilih Nama PIC</option>
                             <?php
-                            foreach ($mj as $j) { ?>
-                                <option value="<?= $j['nama_pic'];?>"><?= $j['nama_pci'];?></option>
+                            foreach ($permintaan as $j) { ?>
+                                <option value="<?= $j['nama_pic'];?>"><?= $j['nama_pic'];?></option>
                             <?php } ?>
                         </select>
-                    </div> -->
+                    </div>
+                    
 
                     <div class="form-group">
                         <select name="nama_pelanggan" class="form-control form-control-user">
@@ -131,19 +122,10 @@
                             <?php } ?>
                         </select>
                     </div>
-
                     <div class="form-group">
                         <input type="date" class="form-control form-control-user" id="tgl_pembayaran" name="tgl_pembayaran" placeholder="Masukkan Tanggal Pembayaran">
                     </div>
-                    <!-- <div class="form-group">
-                        <select name="lokasih" class="form-control form-control-user">
-                            <option value="">Pilih Lokasih</option>
-                            <?php
-                            foreach ($lokasih as $l) { ?>
-                                <option value="<?= $l['lokasih'];?>"><?= $l['lokasih'];?></option>
-                            <?php } ?>
-                        </select>
-                    </div> -->
+                
                     <div class="form-group">
                         <input type="text" class="form-control form-control-user" id="jumlah" name="jumlah" placeholder="Masukkan Jumlah Minyak Jelantah">
                     </div>

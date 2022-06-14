@@ -136,8 +136,14 @@
                         <input type="text" class="form-control form-control-user" id="jumlah" name="jumlah" placeholder="Masukkan Jumlah Minyak Jelantah">
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control form-control-user" id="status" name="status" placeholder="Pilih Status Penjemputan">
-                    </div>
+                        
+                    <input type="text" class="form-control form-control-user" id="status" name="status" placeholder="Pilih Status Penjemputan">
+                    <select name="status" class="form-control" required>
+                        <option value="">- Pilih -</option>
+                        <option value="sudah" <?= $row->status == 'sudah' ? 'selected' : null ?>>Sudah Dijemput</option>
+                        <option value="belum" <?= $row->status == 'belum' ? 'selected' : null ?>>Belum Dijemput</option>
+                    </select>
+                </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="fas fa-ban"></i> Close</button>
