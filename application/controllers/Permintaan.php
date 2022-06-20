@@ -74,10 +74,8 @@ class Permintaan extends CI_Controller
         $data['judul'] = 'Ubah Data Permintaan';
         $data['user'] = $this->db->get_where('user',['email' => $this->session->userdata('email')])->row_array();
         $data['permintaan'] = $this->ModelPermintaan->permintaanWhere(['id_permintaan' => $this->uri->segment(3)])->result_array();
-
         $data['lokasih'] = $this->ModelLokasih->getLokasih()->result_array();
-
-        $data['lokasih'] = $this->ModelLokasih->getLokasih()->result_array();
+        $data['pelanggan'] = $this->ModelPelanggan->getPelanggan()->result_array();
 
         $this->form_validation->set_rules('nama_pic', 'nama_pic', 'required|min_length[3]', [
             'required' => 'Nama PIC harus diisi',
@@ -100,6 +98,7 @@ class Permintaan extends CI_Controller
         ]);
 
         if ($this->form_validation->run() == false) {
+            $data['page_title'] = 'Ubah Data Permintaan';
             $this->load->view('template/navbar', $data);
             $this->load->view('template/sidebar', $data);
             $this->load->view('permintaan/ubah_permintaan', $data);

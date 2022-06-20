@@ -4,7 +4,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0">Data Pembayaran Minyak Jelantah</h1>
+                    <h1 class="m-0">MENU DATA PEMBAYARAN</h1>
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
@@ -133,7 +133,11 @@
                         <input type="text" class="form-control form-control-user" id="bayar" name="bayar" placeholder="Masukkan jumlah Pembayaran">
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control form-control-user" id="status" name="status" placeholder="Pilih Status Pembayaran">
+                        <select class="form-control form-control-user" id="status" name="status">
+                            <option value="">-Pilih Status Pembayaran-</option>
+                            <option value="Sudah Dibayar">Sudah Dibayar</option>
+                            <option value="Belum Dibayar">Belum Dibayar</option>
+                        </select>
                     </div>
                 </div>
                 <div class="modal-footer">

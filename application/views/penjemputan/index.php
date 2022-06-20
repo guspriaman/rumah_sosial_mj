@@ -4,12 +4,12 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0">Data penjemputan Minyak Jelantah</h1>
+                    <h1 class="m-0">MENU DATA PENJEMPUTAN MINYAK JELANTAH</h1>
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item"><a href="<?= base_url('penjemputan')?>">Home</a></li>
-                        <li class="breadcrumb-item active">menu Data Penjemputan</li>
+                        <li class="breadcrumb-item active">Penjemputan</li>
                     </ol>
                 </div>
                                 
@@ -135,15 +135,13 @@
                     <div class="form-group">
                         <input type="text" class="form-control form-control-user" id="jumlah" name="jumlah" placeholder="Masukkan Jumlah Minyak Jelantah">
                     </div>
-                    <div class="form-group">
-                        
-                    <input type="text" class="form-control form-control-user" id="status" name="status" placeholder="Pilih Status Penjemputan">
-                    <select name="status" class="form-control" required>
-                        <option value="">- Pilih -</option>
-                        <option value="sudah" <?= $row->status == 'sudah' ? 'selected' : null ?>>Sudah Dijemput</option>
-                        <option value="belum" <?= $row->status == 'belum' ? 'selected' : null ?>>Belum Dijemput</option>
-                    </select>
-                </div>
+                    <div class="form-group"> 
+                        <select name="status" class="form-control form-control-user">
+                            <option value="">-Pilih Status penjemputan-</option>
+                            <option value="Sudah Dijemput">Sudah Dijemput</option>
+                            <option value="Belum Dijemput">Belum Dijemput</option>>
+                        </select>
+                    </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="fas fa-ban"></i> Close</button>

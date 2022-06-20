@@ -76,6 +76,67 @@ class Keuangan extends CI_Controller
         }
     }
 
+
+    public function ubahKeuangan()
+    {
+        $data['judul'] = 'Ubah Data Keuangan';
+        $data['user'] = $this->db->get_where('user',['email' => $this->session->userdata('email')])->row_array();
+        $data['keuangan'] = $this->ModelKeuangan->keuanganWhere(['id_keuangan' => $this->uri->segment(3)])->result_array();
+        $data['permintaan'] = $this->ModelPermintaan->getPermintaan()->result_array();
+        $data['penjemputan'] = $this->ModelPenjemputan->getPenjemputan()->result_array();
+        $data['pelanggan'] = $this->ModelPelanggan->getPelanggan()->result_array();
+
+        $this->form_validation->set_rules('nama_admin_k', 'nama_admin_k', 'required|min_length[3]', [
+            'required' => 'Nama Admin Keuangan harus diisi',
+            'min_length' => 'Nama Admin Keuangan terlalu pendek'
+        ]);
+        $this->form_validation->set_rules('nama_pic', 'nama_pic', 'required|min_length[3]', [
+            'required' => 'Nama PIC harus diisi',
+            'min_length' => 'Nama PIC terlalu pendek'
+        ]);
+        $this->form_validation->set_rules('nama_pelanggan', 'nama_pelanggan', 'required', [
+            'required' => 'Nama pengarang harus diisi'
+        ]);
+
+        
+        $this->form_validation->set_rules('tgl_pembayaran', 'tgl_pembayaran', 'required', [
+            'required' => 'Tgl Pembayaran harus diisi'
+        ]);
+        $this->form_validation->set_rules('jumlah', 'jumlah', 'required', [
+            'required' => 'jumlah Minyak Jelantah harus diisi'
+        ]);
+        
+        $this->form_validation->set_rules('bayar', 'bayar', 'required', [
+            'required' => 'Nama lokasih harus diisi'
+        ]);
+        $this->form_validation->set_rules('status', 'status', [
+        ]);
+
+        if ($this->form_validation->run() == false) {
+
+            $data['page_title'] = 'Ubah Data Keuangan';
+            $this->load->view('template/navbar', $data);
+            $this->load->view('template/sidebar', $data);
+            $this->load->view('keuangan/ubah_keuangan', $data);
+            $this->load->view('template/footer');
+        } else {
+
+            $data = [
+                'nama_admin_k' => $this->input->post('nama_admin_k', true),
+                'nama_pic' => $this->input->post('nama_pic', true),
+                'nama_pelanggan' => $this->input->post('nama_pelanggan', true),
+                'jumlah' => $this->input->post('jumlah', true),
+                'tgl_pembayaran' => $this->input->post('tgl_pembayaran', true),
+                'bayar' => $this->input->post('bayar', true),
+                'status' => $this->input->post('status', true)
+            ];
+
+            $this->ModelKeuangan->updateKeuangan($data, ['id_keuangan' => $this->input->post('id_keuangan')]);
+            redirect('keuangan');
+        }
+    }
+
+
     public function hapusKeuangan()
     {
         $where = ['id_Keuangan' => $this->uri->segment(3)];

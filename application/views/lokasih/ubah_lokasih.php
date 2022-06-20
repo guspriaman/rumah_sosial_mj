@@ -4,12 +4,12 @@
         <div class="container-fluid">
             <div class="row mb-5">
                 <div class="col-sm-6">
-                    <h1 class="m-0">Menu Data Lokasih Pelanggan/Minyak Jelantah</h1>
+                    <h1 class="m-0">LOKASIH MINYAK JELANTAH</h1>
                 </div>
                 <div class="col-sm-6 mb-3">
                     <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="<?= base_url('admin')?>">Home</a></li>
-                        <li class="breadcrumb-item active">Data Lokasih</li>
+                        <li class="breadcrumb-item"><a href="<?= base_url('lokasih')?>">Home</a></li>
+                        <li class="breadcrumb-item active">Lokasih</li>
                     </ol>
                 </div>
 

@@ -19,7 +19,7 @@ class User extends CI_Controller
         // $data['judul'] = 'Profil Saya';
         $data['user'] = $this->db->get_where('user',['email' => $this->session->userdata('email')])->row_array();
 		$data['page_title'] = 'Profil Saya';
-        $data['page_title'] = 'Data User/PIC';
+        $data['page_title'] = 'Data User';
         $this->load->view('user/index', $data);
     }
 

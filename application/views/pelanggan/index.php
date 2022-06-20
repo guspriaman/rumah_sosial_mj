@@ -5,12 +5,12 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0">Menu Daftar Pelanggan</h1>
+                    <h1 class="m-0">MENU DAFTAR PELANGGAN MINYAK JELANTAH</h1>
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="<?= base_url('admin')?>">Home</a></li>
-                        <li class="breadcrumb-item active">menu Data Pelanggan</li>
+                        <li class="breadcrumb-item"><a href="<?= base_url('pelanggan')?>">Home</a></li>
+                        <li class="breadcrumb-item active">Pelanggan</li>
                     </ol>
                 </div>
                 <div class="col-sm-6 mt-4">
