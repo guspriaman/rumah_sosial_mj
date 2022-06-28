@@ -38,6 +38,5 @@ class ModelLokasih extends CI_Model
     //     $this->db->from('pelanggan');
     //     return $this->db->get()->row($field);
     // }
-    
 
 }

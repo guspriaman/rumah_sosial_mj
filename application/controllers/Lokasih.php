@@ -77,4 +77,6 @@ class Lokasih extends CI_Controller
         $this->ModelLokasih->hapusLokasih($where);
         redirect('lokasih');
     }
+
+    
 }

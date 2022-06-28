@@ -50,16 +50,16 @@
                     <td><?= $a['email']; ?></td>
                     <td><?= date('d F Y', $a['tanggal_input']); ?></td>
                     <td>
-                    <picture>
-                      <source srcset="" type="image/svg+xml">
-                        <img src="<?= base_url('assets/dist/img/profil/') . $a['image']; ?>" class="img-fluid img-thumbnail" style="width:60px;height:80px;">
-                      </picture>
-                      <!-- </td>
-                      <td>
+                      <picture>
+                        <source srcset="" type="image/svg+xml">
+                          <img src="<?= base_url('assets/dist/img/profil/') . $a['image']; ?>" class="img-fluid img-thumbnail" style="width:60px;height:80px;">
+                        </picture>
+                       </td>
+                      <!--<td>
                         <a href="#" class="badge badge-info"><i class="fas fa-edit"></i> Ubah</a>
                             <a href="#" onclick="return confirm('Kamu yakin akan menghapus <?= $judul . ' ' . $b['judul_buku']; ?> ?');" class="badge badge-danger"><i class="fas fa-trash"></i> Hapus</a>
-                        </td> 
-                      </tr> -->
+                      </td>  -->
+                  </tr>
                 <?php } ?>
             </tbody>
         </table>
