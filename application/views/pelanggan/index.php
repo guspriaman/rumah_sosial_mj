@@ -35,7 +35,7 @@
                                     <tr>
                                         <th scope="col">No</th>
                                         <th scope="col">Nama Pelanggan</th>
-                                        <th scope="col">Lokasih Pelanggan</th>
+                                        <th scope="col">Lokasi Pelanggan</th>
                                         <th scope="col">No Tlp Pelanggan</th>
                                         <th scope="col">Tgl Gabung Pelanggan</th>
                                         <th scope="col">Pilihan</th>
@@ -109,7 +109,7 @@
                     </div> -->
                     <div class="form-group">
                         <select name="id_lokasih" class="form-control form-control-user">
-                            <option value="">Pilih lokasih</option>
+                            <option value="">Pilih lokasi</option>
                             <?php
                             foreach ($lokasih as $l) { ?>
                                 <option value="<?= $l['lokasih'];?>"><?= $l['lokasih'];?></option>

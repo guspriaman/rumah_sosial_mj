@@ -46,7 +46,7 @@
                                 </select>
                             </div>
                             <div class="form-group">
-                                <select class="form-control form-control-user" id="lokasih" name="lokasih" placeholder="Masukan Lokasih Minyak jelantah" value="<?= $l['lokasih']; ?>">
+                                <select class="form-control form-control-user" id="lokasih" name="lokasih" placeholder="Masukan Lokasi Minyak jelantah" value="<?= $l['lokasih']; ?>">
                                     <?php foreach ($lokasih as $l) { ?>
                                         <option value="<?= $l['lokasih'];?>"><?= $l['lokasih'];?></option>
                                         

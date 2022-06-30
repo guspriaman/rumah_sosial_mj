@@ -4,12 +4,12 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0">Menu Data Lokasih Pelanggan/Minyak Jelantah</h1>
+                    <h1 class="m-0">Menu Data Lokasi Pelanggan/Minyak Jelantah</h1>
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item"><a href="<?= base_url('admin')?>">Home</a></li>
-                        <li class="breadcrumb-item active">Data Lokasih</li>
+                        <li class="breadcrumb-item active">Data Lokasi</li>
                     </ol>
                 </div>
                 <div class="col-sm-6 mt-4">
@@ -22,7 +22,7 @@
                                 </div>
                                 <?php }?>
                             <?= $this->session->flashdata('pesan'); ?>
-                            <a href="" class="btn btn-primary mb-3" data-toggle="modal" data-target="#lokasihBaruModal"><i class="fas fa-file-alt"></i> Lokasih Baru</a>
+                            <a href="" class="btn btn-primary mb-3" data-toggle="modal" data-target="#lokasihBaruModal"><i class="fas fa-file-alt"></i> Lokasi Baru</a>
                         </div>
                     </div>
                 </div>
@@ -33,7 +33,7 @@
                             <thead>
                                 <tr>
                                     <th scope="col">No</th>
-                                    <th scope="col">Lokasih</th>
+                                    <th scope="col">Lokasi</th>
                                     <th scope="col">Aksi</th>
                                 </tr>
                             </thead>
@@ -71,7 +71,7 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="lokasihBaruModalLabel">Tambah Lokasih</h5>
+                <h5 class="modal-title" id="lokasihBaruModalLabel">Tambah Lokasi</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -79,7 +79,7 @@
             <form action="<?= base_url('lokasih'); ?>" method="post" enctype="multipart/form-data">
                 <div class="modal-body">
                     <div class="form-group">
-                        <input type="text" class="form-control form-control-user" id="lokasih" name="lokasih" placeholder="Masukkan Lokasih">
+                        <input type="text" class="form-control form-control-user" id="lokasih" name="lokasih" placeholder="Masukkan Lokasi">
                     </div>
                 </div>
                 <div class="modal-footer">
