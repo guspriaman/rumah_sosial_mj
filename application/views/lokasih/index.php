@@ -1,4 +1,3 @@
-
 <div class="content-wrapper">
     <div class="content-header">
         <div class="container-fluid">
@@ -6,12 +5,14 @@
                 <div class="col-sm-6">
                     <h1 class="m-0">Menu Data Lokasi Pelanggan/Minyak Jelantah</h1>
                 </div>
+
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item"><a href="<?= base_url('admin')?>">Home</a></li>
                         <li class="breadcrumb-item active">Data Lokasi</li>
                     </ol>
                 </div>
+
                 <div class="col-sm-6 mt-4">
                     <?= $this->session->flashdata('pesan'); ?>
                     <div class="row">
@@ -26,6 +27,7 @@
                         </div>
                     </div>
                 </div>
+
                 <div class="col-sm-12">
                     <div class="card-header">
                         <div class="card-body table p-0" style="height: 300px;">
@@ -54,9 +56,7 @@
                             </tbody>
                             </table>
                         </div>
-
                     </div>
-
                 </div>
             </div>
         </div>
